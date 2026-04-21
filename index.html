@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0f172a">
+    <title>República - App de Estudo</title>
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation -->
+        <header class="app-header">
+            <div class="header-titles">
+                <span class="badge">História do Brasil</span>
+                <h1>A República</h1>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- SEÇÃO DE ESTUDO -->
+            <section id="conteudo" class="tab-content active">
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">👑</div>
+                        <h2>Contexto (1889)</h2>
+                    </div>
+                    <div class="topic-body">
+                        <ul class="feature-list">
+                            <li><strong>Abolição:</strong> Fim do apoio dos fazendeiros ao Império.</li>
+                            <li><strong>Mov. Republicano:</strong> Fim da monarquia, início do federalismo.</li>
+                            <li><strong>Questão Religiosa:</strong> Igreja x Governo.</li>
+                            <li><strong>Questão Militar:</strong> Exército queria poder.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="topic-card highlight-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">⚔️</div>
+                        <h2>A Proclamação</h2>
+                    </div>
+                    <div class="topic-body">
+                        <ul class="feature-list">
+                            <li><strong>15 de novembro de 1889</strong>.</li>
+                            <li>Líder: <strong>Marechal Deodoro</strong>.</li>
+                            <li><span class="alert-text">Golpe militar</span> sem apoio popular.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">🪖</div>
+                        <h2>República da Espada (1889–1894)</h2>
+                    </div>
+                    <div class="topic-body">
+                        <div class="sub-topic">
+                            <h3>Deodoro da Fonseca</h3>
+                            <ul class="tag-list">
+                                <li class="tag">Estado Laico</li>
+                                <li class="tag">Registro Civil</li>
+                                <li class="tag">Bandeira Atual</li>
+                            </ul>
+                            <div class="info-box warning mt-2">
+                                <strong>💰 Encilhamento:</strong> Reforma de Rui Barbosa gerou hiperinflação e crise.
+                            </div>
+                        </div>
+                        <div class="sub-topic mt-4">
+                            <h3>Constituição de 1891</h3>
+                            <ul class="tag-list">
+                                <li class="tag">Presidencialismo</li>
+                                <li class="tag">3 Poderes</li>
+                            </ul>
+                            <div class="info-box danger mt-2">
+                                <strong>⚠️ Voto Aberto:</strong> Só homens alfabetizados. Excluía mulheres.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">🧑‍🌾</div>
+                        <h2>República Oligárquica (1894–1930)</h2>
+                    </div>
+                    <div class="topic-body">
+                        <div class="grid-2-cols">
+                            <div class="feature-item">
+                                <h4>🤠 Coronelismo</h4>
+                                <p>Poder dos grandes fazendeiros.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>🐴 Voto de Cabresto</h4>
+                                <p>Voto forçado por ameaça/favor.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>🤝 Política dos Gov.</h4>
+                                <p>Aliança Presidente + Estados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Spacing for bottom nav -->
+                <div style="height: 80px;"></div>
+            </section>
+
+            <!-- SEÇÃO DE TREINOS -->
+            <section id="treinar" class="tab-content" style="display: none;">
+                
+                <!-- Menu de Treino -->
+                <div id="treinar-menu" class="treinar-menu">
+                    <h2>Escolha como treinar</h2>
+                    <div class="mode-cards">
+                        <button class="mode-btn" id="btn-start-flashcards">
+                            <div class="mode-icon">🗂️</div>
+                            <div class="mode-text">
+                                <h3>Flashcards</h3>
+                                <p>Cartões de memória com avaliação (Acertei / Errei).</p>
+                            </div>
+                        </button>
+                        <button class="mode-btn" id="btn-start-match">
+                            <div class="mode-icon">🔗</div>
+                            <div class="mode-text">
+                                <h3>Ligar os Pontos</h3>
+                                <p>Combine as perguntas com as respostas corretas.</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Flashcards Game -->
+                <div id="flashcards-game" class="game-view" style="display: none;">
+                    <button class="back-btn" id="btn-back-menu-1">← Voltar</button>
+                    <div class="flashcard-wrapper">
+                        <div class="progress-bar-top">
+                            <div class="progress-fill" id="progress"></div>
+                        </div>
+                        
+                        <div class="flashcard-container">
+                            <div class="flashcard" id="card">
+                                <div class="flashcard-inner">
+                                    <div class="flashcard-front">
+                                        <span class="card-number" id="card-counter">1/10</span>
+                                        <div class="question-content">
+                                            <h3 id="card-question">Pergunta</h3>
+                                        </div>
+                                        <p class="flip-hint pulse">Toque para ver a resposta</p>
+                                    </div>
+                                    <div class="flashcard-back">
+                                        <div class="answer-content">
+                                            <h3 style="color: #93c5fd; margin-bottom: 0.5rem;">Resposta:</h3>
+                                            <p id="card-answer">Resposta</p>
+                                        </div>
+                                        <div class="evaluation-buttons">
+                                            <button class="eval-btn error" id="btn-wrong">
+                                                <span class="icon">❌</span> Errei
+                                            </button>
+                                            <button class="eval-btn success" id="btn-correct">
+                                                <span class="icon">✅</span> Acertei
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swipe-hints">
+                                <span>Deslize para navegar (quando virado)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ligar os Pontos Game -->
+                <div id="match-game" class="game-view" style="display: none;">
+                    <button class="back-btn" id="btn-back-menu-2">← Voltar</button>
+                    <div class="progress-bar-top mt-4">
+                        <div class="progress-fill" id="match-progress"></div>
+                    </div>
+                    <div class="match-header">
+                        <h3>Ligue os correspondentes</h3>
+                        <p>Toque em uma pergunta da esquerda e na sua resposta à direita.</p>
+                    </div>
+                    <div class="match-board" id="match-board">
+                        <div class="match-col" id="match-col-q">
+                            <!-- Items inserted by JS -->
+                        </div>
+                        <div class="match-col" id="match-col-a">
+                            <!-- Items inserted by JS -->
+                        </div>
+                    </div>
+                    <button id="btn-next-match" class="action-btn primary-btn mt-4" style="display:none;">Próxima Rodada →</button>
+                </div>
+            </section>
+
+            <!-- TELA DE RESULTADOS -->
+            <section id="results" class="tab-content" style="display: none;">
+                <div class="results-container">
+                    <h2>Treino Concluído! 🎉</h2>
+                    <div class="score-circle">
+                        <span id="score-text">0/10</span>
+                    </div>
+                    <p class="score-message" id="score-message">Muito bem!</p>
+                    
+                    <div class="stats-row" id="stats-row">
+                        <div class="stat-box success-box">
+                            <span class="stat-val" id="stat-correct">0</span>
+                            <span class="stat-label">Acertos</span>
+                        </div>
+                        <div class="stat-box error-box" id="error-box">
+                            <span class="stat-val" id="stat-wrong">0</span>
+                            <span class="stat-label">Erros</span>
+                        </div>
+                    </div>
+
+                    <button class="action-btn primary-btn mt-4" id="btn-restart">Treinar Novamente</button>
+                    <button class="action-btn secondary-btn" id="btn-back-study">Voltar ao Menu</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Navigation (Mobile First) -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" data-target="conteudo">
+                <span class="nav-icon">📖</span>
+                <span>Resumo</span>
+            </button>
+            <button class="nav-item" data-target="treinar">
+                <span class="nav-icon">🎮</span>
+                <span>Treinar</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
