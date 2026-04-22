@@ -6,35 +6,35 @@ if ('serviceWorker' in navigator) {
 }
 
 // ------------------------------------
-// DATABASE: FASE 1 (Base Lore)
+// DATABASE: NÍVEL 1 (Base Lore)
 // ------------------------------------
 const level1Data = [
-    { question: "O que fez os fazendeiros pularem fora do barco do Império?", shortQ: "Fazendeiros revoltados", answer: "A Abolição da Escravidão. Perderam a mão de obra de graça e abandonaram o Imperador.", fakeAnswer: "A Guerra do Paraguai, que deixou o Brasil falido e os fazendeiros sem grana nenhuma.", shortA: "Abolição da Escravidão" },
-    { question: "O que a onda Republicana mais queria?", shortQ: "Objetivo da onda Republicana", answer: "Fim da monarquia e federalismo (mais liberdade para os estados cuidarem do seu pedaço).", fakeAnswer: "A volta da monarquia absoluta e o cancelamento de qualquer eleição no país.", shortA: "Fim da monarquia e federalismo" },
-    { question: "Qual foi a treta da Questão Militar?", shortQ: "A treta da Questão Militar", answer: "O Exército voltou grandão da Guerra do Paraguai e queria cadeira cativa na política.", fakeAnswer: "O exército não queria lutar mais e exigiu o fim das Forças Armadas.", shortA: "Exército querendo mandar" },
-    { question: "Como o Império foi pro buraco em 1889?", shortQ: "Fim do Império (1889)", answer: "Foi um golpe militar em 15/11/1889 pelo Marechal Deodoro. O povão nem participou, só olhou.", fakeAnswer: "O povo foi pras ruas com cartazes e derrubou o Rei na base do grito (Revolução Popular).", shortA: "Golpe militar sem a galera" },
-    { question: "O que foi a chamada República da Espada?", shortQ: "República da Espada", answer: "Primeira fase (1889-1894), com os generais (Deodoro e Floriano) governando na marra e no autoritarismo.", fakeAnswer: "Uma fase pacífica onde o Brasil focou apenas em exportar espadas para a Europa.", shortA: "Fase dos generais mandando" },
-    { question: "O que rolou no desastre do Encilhamento?", shortQ: "Desastre do Encilhamento", answer: "Rui Barbosa liberou geral o dinheiro no banco, gerando hiperinflação e uma crise absurda.", fakeAnswer: "Rui Barbosa proibiu o uso de dinheiro de papel e forçou todo mundo a usar apenas ouro.", shortA: "Hiperinflação e crise braba" },
-    { question: "Qual a maior vergonha da Constituição de 1891?", shortQ: "Vergonha na Const. de 1891", answer: "Voto aberto (zero sigilo) e só pra homem alfabetizado. Mulheres e pobres ficaram de fora.", fakeAnswer: "O voto virou secreto e liberado para absolutamente todo mundo, incluindo mulheres e jovens.", shortA: "Voto aberto, só homens letrados" },
-    { question: "Quem dominava tudo na República Oligárquica?", shortQ: "Donos da Rep. Oligárquica", answer: "A panelinha dos ricaços, principalmente os fazendeiros de café (os donos da grana da época).", fakeAnswer: "Os militares do Exército, que continuaram no poder absoluto até o ano de 1930.", shortA: "Panelinha dos barões do café" },
-    { question: "O que era o famoso Voto de Cabresto?", shortQ: "Voto de Cabresto", answer: "Voto na base da ameaça. O coronel mandava, a galera obedecia por medo ou troca de favores.", fakeAnswer: "Voto feito exclusivamente montado a cavalo nas antigas fazendas do interior.", shortA: "Voto forçado e na ameaça" },
-    { question: "O que era a Política dos Governadores?", shortQ: "Política dos Governadores", answer: "Um puro 'toma lá, dá cá'. O Presidente ajudava os Governadores e eles ajudavam de volta pra manter o esquema.", fakeAnswer: "Uma lei severa onde o Presidente podia demitir qualquer governador que ele não gostasse.", shortA: "Toma lá dá cá entre políticos" }
+    { question: "O que fez a elite rural (os fazendeiros) retirar o apoio ao Império?", shortQ: "Elite rural contra o Império", answer: "A Abolição da Escravidão. Perderam a mão de obra não remunerada e passaram a ser oposição.", fakeAnswer: "A Guerra do Paraguai, que deixou as fazendas de café endividadas e falidas.", shortA: "Abolição da Escravidão" },
+    { question: "Qual era o principal objetivo do movimento Republicano?", shortQ: "Objetivo dos Republicanos", answer: "O fim da monarquia e o federalismo (sistema com mais autonomia para os estados).", fakeAnswer: "O retorno ao regime de monarquia absoluta e o fim imediato das eleições.", shortA: "Fim da monarquia e federalismo" },
+    { question: "O que representou a chamada Questão Militar?", shortQ: "A Questão Militar", answer: "O Exército voltou vitorioso da Guerra do Paraguai e passou a exigir maior poder e participação política.", fakeAnswer: "O exército se recusou a lutar guerras no exterior e propôs o encerramento das Forças Armadas.", shortA: "Exército querendo poder" },
+    { question: "Como ocorreu a transição do Império para a República em 1889?", shortQ: "Fim do Império (1889)", answer: "Através de um golpe militar liderado pelo Marechal Deodoro. A população em geral não participou ativamente.", fakeAnswer: "A população organizou fortes protestos armados até a destituição do Imperador (Revolução Popular).", shortA: "Golpe militar sem o povo" },
+    { question: "Qual foi a principal característica da República da Espada?", shortQ: "A República da Espada", answer: "O período (1889-1894) governado por militares, marcado por forte controle e autoritarismo.", fakeAnswer: "Um período de paz onde o Brasil enriqueceu focando apenas na exportação de armamentos.", shortA: "Fase dos governos militares" },
+    { question: "O que causou a crise financeira conhecida como Encilhamento?", shortQ: "O Encilhamento", answer: "A política de emissão de moeda sem lastro liderada por Rui Barbosa, que resultou em hiperinflação.", fakeAnswer: "A proibição federal do uso de moedas de papel, forçando o comércio a operar somente em ouro.", shortA: "Hiperinflação por emissão livre" },
+    { question: "Qual era a maior restrição presente na Constituição de 1891?", shortQ: "Restrição na Const. de 1891", answer: "O voto aberto destinado exclusivamente a homens alfabetizados, excluindo mulheres e as camadas mais pobres.", fakeAnswer: "A imposição do voto secreto irrestrito, garantindo a participação de toda a população nas urnas.", shortA: "Voto aberto e apenas para poucos" },
+    { question: "Qual grupo dominou a política durante o período da República Oligárquica?", shortQ: "Domínio da Rep. Oligárquica", answer: "A forte elite agroexportadora, liderada pelos poderosos fazendeiros e barões do café.", fakeAnswer: "As forças armadas do Exército, que continuaram no comando contínuo até a Revolução de 1930.", shortA: "Elite dos grandes fazendeiros" },
+    { question: "Como funcionava o mecanismo conhecido como Voto de Cabresto?", shortQ: "Voto de Cabresto", answer: "O controle direto do voto do eleitorado local pelos coronéis, feito sob ameaça ou em troca de pequenos favores.", fakeAnswer: "Uma regra de votação onde os cidadãos só poderiam votar se viajassem até a capital federal.", shortA: "Voto manipulado sob pressão" },
+    { question: "O que foi o pacto denominado Política dos Governadores?", shortQ: "Política dos Governadores", answer: "Um acordo de ajuda mútua entre o Presidente e os governadores para garantir que os aliados se mantivessem sempre no poder.", fakeAnswer: "Uma rigorosa lei constitucional onde o Presidente poderia dissolver estados e destituir governadores livremente.", shortA: "Acordo mútuo para manter o poder" }
 ];
 
 // ------------------------------------
-// DATABASE: FASE 2 (Paraphrased & Harder)
+// DATABASE: NÍVEL 2 (Formal & Aprofundado)
 // ------------------------------------
 const level2Data = [
-    { question: "Qual evento fez a elite latifundiária virar a casaca contra Dom Pedro II?", shortQ: "Elite virando a casaca", answer: "A Lei Áurea. Sem escravos, os produtores rurais retiraram a base de apoio monárquica.", fakeAnswer: "As enormes dívidas externas acumuladas durante a crise econômica com a Inglaterra.", shortA: "Fim da escravidão (Lei Áurea)" },
-    { question: "Qual era a bandeira principal dos defensores do novo regime republicano?", shortQ: "Bandeira dos Republicanos", answer: "Extinguir o poder centralizado do monarca e dar autonomia regional às províncias.", fakeAnswer: "Manter o poder centralizado na capital, mas substituindo o rei por um ditador.", shortA: "Autonomia regional e federalismo" },
-    { question: "Por que as Forças Armadas se sentiram desvalorizadas pelo governo imperial?", shortQ: "Forças Armadas desvalorizadas", answer: "Porque após a vitória no Paraguai, o império negou a eles influência e prestígio político.", fakeAnswer: "Porque o Império reduziu drasticamente o salário dos generais para pagar dívidas.", shortA: "Negaram influência política" },
-    { question: "A transição para a República foi um movimento com apoio popular maciço?", shortQ: "Apoio popular na transição?", answer: "Não! Foi um levante exclusivo do exército. A população 'bestializada' apenas observou.", fakeAnswer: "Sim, foi uma grande revolução popular fortemente inspirada na Revolução Francesa.", shortA: "Levante exclusivo do exército" },
-    { question: "Qual nome é dado ao primeiro período da República, comandado por marechais?", shortQ: "Primeiros 5 anos de República", answer: "República da Espada, marcada pela forte repressão e governos militares autoritários.", fakeAnswer: "República Democrática, devido à rápida devolução do poder aos líderes civis.", shortA: "República da Espada" },
-    { question: "Qual foi o estopim da primeira grande crise financeira e especulativa do Brasil república?", shortQ: "Estopim da primeira crise", answer: "A política de emissão descontrolada de dinheiro sem lastro (conhecida como Encilhamento).", fakeAnswer: "O aumento massivo dos impostos de exportação sobre a produção do café paulista.", shortA: "Emissão descontrolada de moeda" },
-    { question: "Quais grupos sociais foram constitucionalmente excluídos das urnas em 1891?", shortQ: "Excluídos das urnas em 1891", answer: "Analfabetos, mendigos, soldados e mulheres não tinham o direito ao sufrágio (voto).", fakeAnswer: "Apenas os estrangeiros foram excluídos; todos os brasileiros natos podiam votar livremente.", shortA: "Mulheres, analfabetos e soldados" },
-    { question: "Qual classe econômica monopolizou o poder federal durante quase toda a Primeira República?", shortQ: "Classe no poder federal", answer: "A oligarquia cafeeira, os grandes latifundiários produtores de café.", fakeAnswer: "A emergente classe operária urbana e os comerciantes dos grandes centros de São Paulo.", shortA: "Oligarquia cafeeira" },
-    { question: "Qual era o principal mecanismo de coerção eleitoral usado pelos líderes locais (coronéis)?", shortQ: "Coerção eleitoral local", answer: "A pressão física ou moral sobre os eleitores para controlar o voto, conhecida como Voto de Cabresto.", fakeAnswer: "O uso de cédulas falsas impressas e distribuídas pelo próprio presidente nas capitais.", shortA: "Pressão sobre eleitores (Cabresto)" },
-    { question: "Como se chamava a aliança de favores que sustentava o poder federal e estadual sem concorrência?", shortQ: "Aliança de favores mútua", answer: "A Política dos Governadores, um acordo que impedia a oposição de ganhar espaço político.", fakeAnswer: "A lei de proibição de alianças políticas entre governadores de províncias diferentes.", shortA: "Política dos Governadores" }
+    { question: "Qual evento histórico provocou a ruptura entre a elite latifundiária e Dom Pedro II?", shortQ: "Ruptura da elite com D. Pedro II", answer: "A sanção da Lei Áurea. Sem o direito à escravidão, os produtores retiraram sua base de apoio monárquica.", fakeAnswer: "As enormes dívidas externas acumuladas durante a crise econômica junto ao império Britânico.", shortA: "O fim da escravidão (Lei Áurea)" },
+    { question: "Qual pauta ideológica motivou os principais defensores do novo regime republicano?", shortQ: "Pauta dos Republicanos", answer: "A descentralização do poder real em prol de um arranjo federalista, dando autonomia às províncias.", fakeAnswer: "A manutenção do poder extremamente centralizado na capital federal, comandada por uma autoridade civil.", shortA: "Autonomia regional e federalismo" },
+    { question: "Por quais razões as Forças Armadas entraram em choque de interesses com o governo imperial?", shortQ: "Choque com as Forças Armadas", answer: "Pois, ao retornarem do conflito no Paraguai com nova consciência corporativa, tiveram sua ascensão política freada.", fakeAnswer: "Porque o Império estipulou uma brusca redução salarial das patentes militares para sanar a dívida pública.", shortA: "Negaram ascensão política aos militares" },
+    { question: "A transição institucional para a República contou com expressivo respaldo popular?", shortQ: "Respaldo popular na transição?", answer: "De maneira alguma. A mudança tratou-se de um levante militar cujos desdobramentos a população assistiu alheia.", fakeAnswer: "Sem dúvida, o movimento foi impulsionado por manifestações de cunho popular em prol de garantias republicanas.", shortA: "Foi um levante essencialmente militar" },
+    { question: "Sob qual terminologia ficou conhecido o primeiro lustro republicano marcado pelo autoritarismo?", shortQ: "Primeiros anos da República", answer: "República da Espada, marcada pela forte repressão e pela consolidação institucional via governos militares.", fakeAnswer: "República Democrática, assim chamada devido à veloz e estável transferência do poder às mãos dos civis.", shortA: "A República da Espada" },
+    { question: "Qual política monetária foi o estopim da primeira crise especulativa do Brasil republicano?", shortQ: "Estopim da primeira crise", answer: "O Encilhamento, uma audaciosa política de emissão monetária que culminou em forte inflação descontrolada.", fakeAnswer: "O vertiginoso aumento da tributação sobre os excedentes das safras de café do sudeste do país.", shortA: "Emissão monetária sem lastro" },
+    { question: "Sob a Constituição de 1891, quais grupos foram marginalizados do exercício da cidadania plena?", shortQ: "Excluídos pela Const. de 1891", answer: "Os analfabetos, as mulheres, as praças de pré (soldados) e os mendigos não tinham o direito ao sufrágio.", fakeAnswer: "Excluíram-se estritamente os estrangeiros e nobres, franqueando as urnas a todos os cidadãos brasileiros natos.", shortA: "Mulheres, analfabetos e soldados" },
+    { question: "Qual extrato econômico exerceu a hegemonia no comando do Executivo Federal na Primeira República?", shortQ: "Hegemonia no Executivo", answer: "A ascendente oligarquia cafeeira, constituída pelos grandes latifundiários produtores rurais.", fakeAnswer: "O incipiente operariado dos centros urbanos aliado à burguesia industrial recém-formada no Rio de Janeiro.", shortA: "A oligarquia agroexportadora" },
+    { question: "Qual prática representava a submissão coercitiva do eleitorado aos interesses dos líderes locais?", shortQ: "Submissão coercitiva local", answer: "O Coronelismo e seu correspondente Voto de Cabresto, fundamentados no uso da força ou no clientelismo.", fakeAnswer: "O massivo emprego de urnas e cédulas falsificadas que eram sistematicamente despachadas pelo governo central.", shortA: "Coação e controle (Voto de Cabresto)" },
+    { question: "Qual pacto institucional garantiu a estabilidade do poder entre a União e as oligarquias estaduais?", shortQ: "Pacto de estabilidade do poder", answer: "A Política dos Governadores, arquitetura que barrava a representação oposicionista no âmbito político.", fakeAnswer: "O dispositivo legal que proibia formalmente toda articulação partidária ou acordos inter-estaduais na câmara.", shortA: "A Política dos Governadores" }
 ];
 
 
@@ -138,7 +138,7 @@ function initFlashcards() {
     flashIndex = 0;
     flashCorrect = 0;
     flashWrong = 0;
-    document.getElementById('flash-level-text').textContent = currentLevel === 1 ? '🔥 FASE 1' : '🌶️ FASE 2 (PEDREIRA)';
+    document.getElementById('flash-level-text').textContent = currentLevel === 1 ? 'Nível 1' : 'Nível 2 (Desafio)';
     
     // Shuffle the current data
     currentData = currentData.sort(() => Math.random() - 0.5);
@@ -209,9 +209,9 @@ function handleFlashcardAnswer(isUserCorrect) {
         btnContinue.innerHTML = 'Aguarde... ⏱️';
         
         if (currentCardIsTrue) {
-            aEl.textContent = "Na verdade era ISSO MESMO! Você errou ao julgar que era mentira.";
+            aEl.textContent = "A resposta estava CORRETA! Você avaliou equivocadamente como falso.";
         } else {
-            aEl.textContent = "CAÔ! ❌ A verdade é: " + currentData[flashIndex].answer;
+            aEl.textContent = "FALSO! ❌ O fato correto é: " + currentData[flashIndex].answer;
         }
         aEl.style.color = '#f87171'; // light red
         aEl.style.fontWeight = 'bold';
@@ -254,7 +254,7 @@ let selectedA = null;
 let matchesInRound = 0;
 
 function initMatchGame() {
-    document.getElementById('match-level-text').textContent = currentLevel === 1 ? '🔥 FASE 1' : '🌶️ FASE 2 (PEDREIRA)';
+    document.getElementById('match-level-text').textContent = currentLevel === 1 ? 'Nível 1' : 'Nível 2 (Desafio)';
     
     let shuffled = [...currentData].sort(() => Math.random() - 0.5);
     matchRounds = [];
@@ -382,9 +382,9 @@ function showResults(correct, total, showErrors) {
     const msg = document.getElementById('score-message');
     const title = document.getElementById('result-title');
     
-    if(percentage === 100) { title.textContent = "Amassou! 🏆"; msg.textContent = "O puro suco do conhecimento. Gabaritou!"; }
-    else if(percentage >= 70) { title.textContent = "Mandou bem! 🌟"; msg.textContent = "Tá pegando a visão. Quase perfeito!"; }
-    else { title.textContent = "Rodou 💀"; msg.textContent = "Deu ruim, mas a gente tenta de novo!"; }
+    if(percentage === 100) { title.textContent = "Nível Concluído! 🏆"; msg.textContent = "Excelente desempenho. Você gabaritou!"; }
+    else if(percentage >= 70) { title.textContent = "Bom trabalho! 🌟"; msg.textContent = "Foi muito bem! Está quase lá."; }
+    else { title.textContent = "Revisão Necessária 📚"; msg.textContent = "Ainda pode melhorar. Vamos tentar de novo!"; }
 
     if(showErrors) {
         document.getElementById('stats-row').style.display = 'flex';
