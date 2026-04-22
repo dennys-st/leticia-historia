@@ -18,6 +18,9 @@ const flashcardsData = [
     { question: "O que foi a Política dos Governadores?", shortQ: "Política dos Governadores", answer: "Acordo de troca de favores e apoio mútuo entre o Presidente e os Governadores.", shortA: "Aliança Presidente e Govs." }
 ];
 
+// GLOBALS
+let currentGameMode = null; // 'flashcards' | 'match'
+
 // Navigation Logic
 const navItems = document.querySelectorAll('.nav-item');
 const tabContents = document.querySelectorAll('.tab-content');
@@ -25,45 +28,27 @@ const tabContents = document.querySelectorAll('.tab-content');
 navItems.forEach(item => {
     item.addEventListener('click', () => {
         navItems.forEach(n => n.classList.remove('active'));
-        tabContents.forEach(c => c.classList.remove('active'));
+        tabContents.forEach(c => {
+            c.classList.remove('active');
+            c.style.display = 'none';
+        });
+        
         item.classList.add('active');
-        const target = document.getElementById(item.getAttribute('data-target'));
+        const targetId = item.getAttribute('data-target');
+        const target = document.getElementById(targetId);
+        target.style.display = 'block';
         target.classList.add('active');
 
-        // Reset to menu if entering Treinar tab
-        if(item.getAttribute('data-target') === 'treinar') {
-            backToMenu();
+        // Init specific game modes
+        if (targetId === 'flashcards-game') {
+            currentGameMode = 'flashcards';
+            initFlashcards();
+        } else if (targetId === 'match-game') {
+            currentGameMode = 'match';
+            initMatchGame();
         }
     });
 });
-
-// GLOBALS
-let currentGameMode = null; // 'flashcards' | 'match'
-
-// ----- MENUS -----
-document.getElementById('btn-start-flashcards').addEventListener('click', () => {
-    currentGameMode = 'flashcards';
-    document.getElementById('treinar-menu').style.display = 'none';
-    document.getElementById('flashcards-game').style.display = 'flex';
-    initFlashcards();
-});
-
-document.getElementById('btn-start-match').addEventListener('click', () => {
-    currentGameMode = 'match';
-    document.getElementById('treinar-menu').style.display = 'none';
-    document.getElementById('match-game').style.display = 'flex';
-    initMatchGame();
-});
-
-document.getElementById('btn-back-menu-1').addEventListener('click', backToMenu);
-document.getElementById('btn-back-menu-2').addEventListener('click', backToMenu);
-
-function backToMenu() {
-    document.getElementById('flashcards-game').style.display = 'none';
-    document.getElementById('match-game').style.display = 'none';
-    document.getElementById('results').style.display = 'none';
-    document.getElementById('treinar-menu').style.display = 'block';
-}
 
 
 // ----- FLASHCARDS LOGIC -----
@@ -145,7 +130,6 @@ function initMatchGame() {
         if(chunk.length === 3) {
             matchRounds.push(chunk);
         } else if (matchRounds.length > 0) {
-            // Push remainder to last round
             matchRounds[matchRounds.length-1].push(...chunk);
         }
     }
@@ -229,7 +213,7 @@ function checkMatch() {
                 if(currentMatchRound < matchRounds.length - 1) {
                     document.getElementById('btn-next-match').style.display = 'block';
                 } else {
-                    setTimeout(() => showResults(10, 10, false), 600); // 10/10 for completing
+                    setTimeout(() => showResults(10, 10, false), 600);
                 }
             }
         } else {
@@ -270,7 +254,6 @@ function showResults(correct, total, showErrors) {
     else if(percentage >= 70) msg.textContent = "Muito bem! Quase lá! 🌟";
     else msg.textContent = "Continue treinando! Você consegue! 💪";
 
-    // Show/hide error stats based on game mode
     if(showErrors) {
         document.getElementById('stats-row').style.display = 'flex';
         document.getElementById('stat-correct').textContent = correct;
@@ -287,15 +270,15 @@ function showResults(correct, total, showErrors) {
 document.getElementById('btn-restart').addEventListener('click', () => {
     document.getElementById('results').style.display = 'none';
     if(currentGameMode === 'flashcards') {
-        document.getElementById('flashcards-game').style.display = 'flex';
+        document.getElementById('flashcards-game').style.display = 'block';
         initFlashcards();
     } else {
-        document.getElementById('match-game').style.display = 'flex';
+        document.getElementById('match-game').style.display = 'block';
         initMatchGame();
     }
 });
 
 document.getElementById('btn-back-study').addEventListener('click', () => {
     document.getElementById('results').style.display = 'none';
-    backToMenu();
+    navItems[0].click(); // Go back to Resumo
 });

@@ -110,80 +110,55 @@
                 <div style="height: 80px;"></div>
             </section>
 
-            <!-- SEÇÃO DE TREINOS -->
-            <section id="treinar" class="tab-content" style="display: none;">
-                
-                <!-- Menu de Treino -->
-                <div id="treinar-menu" class="treinar-menu">
-                    <h2>Escolha como treinar</h2>
-                    <div class="mode-cards">
-                        <button class="mode-btn" id="btn-start-flashcards">
-                            <div class="mode-icon">🗂️</div>
-                            <div class="mode-text">
-                                <h3>Flashcards</h3>
-                                <p>Cartões de memória com avaliação (Acertei / Errei).</p>
-                            </div>
-                        </button>
-                        <button class="mode-btn" id="btn-start-match">
-                            <div class="mode-icon">🔗</div>
-                            <div class="mode-text">
-                                <h3>Ligar os Pontos</h3>
-                                <p>Combine as perguntas com as respostas corretas.</p>
-                            </div>
-                        </button>
+            <!-- SEÇÃO FLASHCARDS -->
+            <section id="flashcards-game" class="tab-content" style="display: none;">
+                <div class="flashcard-wrapper game-view">
+                    <div class="progress-bar-top">
+                        <div class="progress-fill" id="progress"></div>
                     </div>
-                </div>
-
-                <!-- Flashcards Game -->
-                <div id="flashcards-game" class="game-view" style="display: none;">
-                    <button class="back-btn" id="btn-back-menu-1">← Voltar</button>
-                    <div class="flashcard-wrapper">
-                        <div class="progress-bar-top">
-                            <div class="progress-fill" id="progress"></div>
-                        </div>
-                        
-                        <div class="flashcard-container">
-                            <div class="flashcard" id="card">
-                                <div class="flashcard-inner">
-                                    <div class="flashcard-front">
-                                        <span class="card-number" id="card-counter">1/10</span>
-                                        <div class="question-content">
-                                            <h3 id="card-question">Pergunta</h3>
-                                        </div>
-                                        <p class="flip-hint pulse">Toque para ver a resposta</p>
+                    
+                    <div class="flashcard-container">
+                        <div class="flashcard" id="card">
+                            <div class="flashcard-inner">
+                                <div class="flashcard-front">
+                                    <span class="card-number" id="card-counter">1/10</span>
+                                    <div class="question-content">
+                                        <h3 id="card-question">Pergunta</h3>
                                     </div>
-                                    <div class="flashcard-back">
-                                        <div class="answer-content">
-                                            <h3 style="color: #93c5fd; margin-bottom: 0.5rem;">Resposta:</h3>
-                                            <p id="card-answer">Resposta</p>
-                                        </div>
-                                        <div class="evaluation-buttons">
-                                            <button class="eval-btn error" id="btn-wrong">
-                                                <span class="icon">❌</span> Errei
-                                            </button>
-                                            <button class="eval-btn success" id="btn-correct">
-                                                <span class="icon">✅</span> Acertei
-                                            </button>
-                                        </div>
+                                    <p class="flip-hint pulse">Toque para ver a resposta</p>
+                                </div>
+                                <div class="flashcard-back">
+                                    <div class="answer-content">
+                                        <h3 style="color: #93c5fd; margin-bottom: 0.5rem;">Resposta:</h3>
+                                        <p id="card-answer">Resposta</p>
+                                    </div>
+                                    <div class="evaluation-buttons">
+                                        <button class="eval-btn error" id="btn-wrong">
+                                            <span class="icon">❌</span> Errei
+                                        </button>
+                                        <button class="eval-btn success" id="btn-correct">
+                                            <span class="icon">✅</span> Acertei
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swipe-hints">
-                                <span>Deslize para navegar (quando virado)</span>
-                            </div>
+                        </div>
+                        <div class="swipe-hints">
+                            <span>Deslize para navegar (quando virado)</span>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Ligar os Pontos Game -->
-                <div id="match-game" class="game-view" style="display: none;">
-                    <button class="back-btn" id="btn-back-menu-2">← Voltar</button>
-                    <div class="progress-bar-top mt-4">
+            <!-- SEÇÃO LIGAR OS PONTOS -->
+            <section id="match-game" class="tab-content" style="display: none;">
+                <div class="game-view">
+                    <div class="progress-bar-top mt-2">
                         <div class="progress-fill" id="match-progress"></div>
                     </div>
                     <div class="match-header">
                         <h3>Ligue os correspondentes</h3>
-                        <p>Toque em uma pergunta da esquerda e na sua resposta à direita.</p>
+                        <p>Toque na pergunta e depois na resposta certa.</p>
                     </div>
                     <div class="match-board" id="match-board">
                         <div class="match-col" id="match-col-q">
@@ -218,7 +193,7 @@
                     </div>
 
                     <button class="action-btn primary-btn mt-4" id="btn-restart">Treinar Novamente</button>
-                    <button class="action-btn secondary-btn" id="btn-back-study">Voltar ao Menu</button>
+                    <button class="action-btn secondary-btn" id="btn-back-study">Voltar ao Resumo</button>
                 </div>
             </section>
         </main>
@@ -229,9 +204,13 @@
                 <span class="nav-icon">📖</span>
                 <span>Resumo</span>
             </button>
-            <button class="nav-item" data-target="treinar">
-                <span class="nav-icon">🎮</span>
-                <span>Treinar</span>
+            <button class="nav-item" data-target="flashcards-game">
+                <span class="nav-icon">🗂️</span>
+                <span>Flashcards</span>
+            </button>
+            <button class="nav-item" data-target="match-game">
+                <span class="nav-icon">🔗</span>
+                <span>Associação</span>
             </button>
         </nav>
     </div>
