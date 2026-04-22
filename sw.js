@@ -1,4 +1,4 @@
-const CACHE_NAME = 'historia-app-v2';
+const CACHE_NAME = 'historia-app-v3';
 const urlsToCache = [
   './',
   './index.html',
