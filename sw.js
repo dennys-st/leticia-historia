@@ -1,4 +1,4 @@
-const CACHE_NAME = 'historia-app-v3';
+const CACHE_NAME = 'historia-app-v4';
 const urlsToCache = [
   './',
   './index.html',
@@ -17,7 +17,7 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
-  // Deleta todos os caches antigos que não são o v2
+  // Deleta todos os caches antigos que não são o v4
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
@@ -32,11 +32,23 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
+  // ESTRATÉGIA NETWORK-FIRST (Sempre tenta buscar a versão mais recente da internet primeiro)
   event.respondWith(
-    caches.match(event.request)
+    fetch(event.request)
       .then(response => {
-        // Se achou no cache, retorna. Se não, busca na internet.
-        return response || fetch(event.request);
+        // Se a rede funcionou, atualiza o cache silenciosamente e retorna a resposta fresca
+        if(response && response.status === 200 && response.type === 'basic') {
+            const responseToCache = response.clone();
+            caches.open(CACHE_NAME)
+              .then(cache => {
+                cache.put(event.request, responseToCache);
+              });
+        }
+        return response;
+      })
+      .catch(() => {
+        // Se a rede falhar (offline), busca no cache
+        return caches.match(event.request);
       })
   );
 });
