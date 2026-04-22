@@ -518,3 +518,56 @@ body {
 /* Animations */
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 .tab-content.active { animation: fadeIn 0.3s ease forwards; display: block !important; }
+
+/* ENEM STYLES */
+.enem-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.enem-option {
+    background-color: var(--bg);
+    border: 2px solid var(--surface-active);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: left;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    line-height: 1.4;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.enem-option .letter {
+    font-weight: bold;
+    color: var(--primary);
+    min-width: 20px;
+}
+
+.enem-option:hover {
+    border-color: var(--primary);
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+.enem-option.correct {
+    background-color: rgba(16, 185, 129, 0.1);
+    border-color: var(--success);
+    color: #a7f3d0;
+}
+
+.enem-option.wrong {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: var(--danger);
+    color: #fca5a5;
+    opacity: 0.7;
+}
+
+.enem-option:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+}

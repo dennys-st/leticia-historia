@@ -115,6 +115,9 @@ navItems.forEach(item => {
         } else if (targetId === 'match-game') {
             currentGameMode = 'match';
             initMatchGame();
+        } else if (targetId === 'enem-game') {
+            currentGameMode = 'enem';
+            initEnemGame();
         }
     });
 });
@@ -371,6 +374,7 @@ document.getElementById('btn-next-match').onclick = () => {
 function showResults(correct, total, showErrors) {
     document.getElementById('flashcards-game').style.display = 'none';
     document.getElementById('match-game').style.display = 'none';
+    document.getElementById('enem-game').style.display = 'none';
     document.getElementById('results').style.display = 'block';
     
     document.getElementById('score-text').textContent = `${correct}/${total}`;
@@ -420,9 +424,12 @@ document.getElementById('btn-next-level').addEventListener('click', () => {
     if(currentGameMode === 'flashcards') {
         document.getElementById('flashcards-game').style.display = 'block';
         initFlashcards();
-    } else {
+    } else if(currentGameMode === 'match') {
         document.getElementById('match-game').style.display = 'block';
         initMatchGame();
+    } else if(currentGameMode === 'enem') {
+        document.getElementById('enem-game').style.display = 'block';
+        initEnemGame();
     }
 });
 
@@ -431,13 +438,147 @@ document.getElementById('btn-restart').addEventListener('click', () => {
     if(currentGameMode === 'flashcards') {
         document.getElementById('flashcards-game').style.display = 'block';
         initFlashcards();
-    } else {
+    } else if(currentGameMode === 'match') {
         document.getElementById('match-game').style.display = 'block';
         initMatchGame();
+    } else if(currentGameMode === 'enem') {
+        document.getElementById('enem-game').style.display = 'block';
+        initEnemGame();
     }
 });
 
 document.getElementById('btn-back-study').addEventListener('click', () => {
     document.getElementById('results').style.display = 'none';
     navItems[0].click(); // Go back to Resumo
+});
+
+// ----- ENEM GAME LOGIC -----
+const enemData = [
+    {
+        question: "No Brasil da Primeira República, a estrutura política baseava-se na articulação entre o governo federal e as oligarquias estaduais. Essa articulação, conhecida como Política dos Governadores, dependia do controle do eleitorado, que era garantido por meio:",
+        options: [
+            "do voto secreto.",
+            "da justiça eleitoral independente.",
+            "do coronelismo e voto de cabresto.",
+            "da participação ativa das mulheres.",
+            "do controle estrito dos sindicatos urbanos."
+        ],
+        correct: 2 // Index of "do coronelismo..."
+    },
+    {
+        question: "A abolição da escravidão em 1888 teve forte impacto político no Brasil Império, pois:",
+        options: [
+            "fortaleceu o apoio da Igreja Católica ao imperador.",
+            "afastou a elite latifundiária escravocrata do governo monárquico.",
+            "resultou em uma imediata reforma agrária para os ex-escravos.",
+            "pacificou os conflitos com o exército.",
+            "consolidou o modelo industrial no país."
+        ],
+        correct: 1 // Index of "afastou a elite..."
+    },
+    {
+        question: "A política econômica do Encilhamento, implementada no início da República pelo ministro Rui Barbosa, tinha o objetivo de estimular a industrialização, mas resultou em:",
+        options: [
+            "crescimento sustentável da indústria nacional.",
+            "distribuição igualitária de renda entre os civis.",
+            "hiperinflação e criação de empresas fantasmas.",
+            "fim da dependência do café na economia brasileira.",
+            "valorização da moeda nacional no mercado externo."
+        ],
+        correct: 2 // Index of "hiperinflação..."
+    },
+    {
+        question: "A primeira Constituição Republicana do Brasil, promulgada em 1891, estabeleceu o sufrágio direto, porém excludente. Dentre os grupos que não possuíam o direito ao voto, destacavam-se:",
+        options: [
+            "os grandes fazendeiros de café e industriais.",
+            "os militares de alta patente e juízes.",
+            "as mulheres, os mendigos e os analfabetos.",
+            "os imigrantes europeus alfabetizados.",
+            "os proprietários de terras e comerciantes."
+        ],
+        correct: 2 // Index of "as mulheres..."
+    },
+    {
+        question: "Sobre o movimento que culminou na Proclamação da República em 15 de novembro de 1889, é correto afirmar que:",
+        options: [
+            "foi uma grande revolução com forte participação das camadas populares.",
+            "resultou de um longo processo de plebiscito nacional.",
+            "foi um golpe liderado por militares, com escassa ou nula participação popular.",
+            "ocorreu devido à intervenção direta de países europeus na política brasileira.",
+            "consolidou-se unicamente pela vontade exclusiva do clero católico."
+        ],
+        correct: 2 // Index of "foi um golpe..."
+    }
+];
+
+let enemIndex = 0;
+let enemCorrect = 0;
+let enemWrong = 0;
+
+function initEnemGame() {
+    enemIndex = 0;
+    enemCorrect = 0;
+    enemWrong = 0;
+    loadEnemQuestion();
+}
+
+function loadEnemQuestion() {
+    if(enemIndex >= enemData.length) {
+        showResults(enemCorrect, enemData.length, true);
+        return;
+    }
+
+    const data = enemData[enemIndex];
+    document.getElementById('enem-counter').textContent = `${enemIndex + 1}/${enemData.length}`;
+    document.getElementById('enem-progress').style.width = `${(enemIndex / enemData.length) * 100}%`;
+    document.getElementById('enem-question').textContent = data.question;
+    
+    const optionsContainer = document.getElementById('enem-options');
+    optionsContainer.innerHTML = '';
+    document.getElementById('enem-continue-area').style.display = 'none';
+
+    const letters = ['A', 'B', 'C', 'D', 'E'];
+    
+    data.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'enem-option';
+        btn.innerHTML = `<span class="letter">${letters[idx]})</span> <span class="text">${opt}</span>`;
+        btn.onclick = () => checkEnemAnswer(idx, btn);
+        optionsContainer.appendChild(btn);
+    });
+}
+
+function checkEnemAnswer(selectedIndex, btnElement) {
+    const data = enemData[enemIndex];
+    const optionsContainer = document.getElementById('enem-options');
+    const buttons = optionsContainer.querySelectorAll('.enem-option');
+    
+    // Disable all buttons
+    buttons.forEach(btn => btn.disabled = true);
+    
+    if(selectedIndex === data.correct) {
+        enemCorrect++;
+        playFeedback('success');
+        btnElement.classList.add('correct');
+        setTimeout(() => {
+            enemIndex++;
+            loadEnemQuestion();
+        }, 1200); // Short delay to show success before moving on
+    } else {
+        enemWrong++;
+        playFeedback('error');
+        btnElement.classList.add('wrong');
+        
+        // Highlight the correct one
+        buttons[data.correct].classList.add('correct');
+        
+        // Show continue button
+        const continueArea = document.getElementById('enem-continue-area');
+        continueArea.style.display = 'block';
+    }
+}
+
+document.getElementById('btn-enem-continue').addEventListener('click', () => {
+    enemIndex++;
+    loadEnemQuestion();
 });
