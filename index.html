@@ -4,108 +4,179 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#0f172a">
-    <title>República - App de Estudo</title>
+    <title>República - A História Real</title>
     <link rel="manifest" href="manifest.json">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- Confetti Library -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
+    <!-- Screen Flash Overlay for Feedback -->
+    <div id="screen-flash" class="screen-flash"></div>
     <div class="app-container">
         <!-- Top Navigation -->
         <header class="app-header">
             <div class="header-titles">
-                <span class="badge">História do Brasil</span>
-                <h1>A República</h1>
+                <span class="badge">A Fofoca do Brasil 🇧🇷</span>
+                <h1>A República 👑📉</h1>
             </div>
         </header>
 
         <!-- Main Content Area -->
         <main class="main-content">
-            <!-- SEÇÃO DE ESTUDO -->
+            <!-- SEÇÃO DE ESTUDO (A FOFOCA) -->
             <section id="conteudo" class="tab-content active">
                 <div class="topic-card">
                     <div class="topic-header">
-                        <div class="topic-icon">👑</div>
-                        <h2>Contexto (1889)</h2>
+                        <div class="topic-icon">👀</div>
+                        <h2>A Treta de 1889 (O Contexto)</h2>
                     </div>
                     <div class="topic-body">
+                        <p>O Império tava respirando por aparelhos. Pega a visão do que rolou pra Monarquia cair:</p>
                         <ul class="feature-list">
-                            <li><strong>Abolição:</strong> Fim do apoio dos fazendeiros ao Império.</li>
-                            <li><strong>Mov. Republicano:</strong> Fim da monarquia, início do federalismo.</li>
-                            <li><strong>Questão Religiosa:</strong> Igreja x Governo.</li>
-                            <li><strong>Questão Militar:</strong> Exército queria poder.</li>
+                            <li><strong>Abolição da Escravidão:</strong> Os fazendeiros ficaram revoltados por perder a mão de obra de graça e pularam fora do barco do Imperador.</li>
+                            <li><strong>A Onda Republicana:</strong> A galera queria federalismo (cada estado cuidando do seu próprio quintal com mais autonomia).</li>
+                            <li><strong>A Treta Religiosa:</strong> O Governo e o Papa já não se bicavam. O Imperador foi cancelado pela Igreja.</li>
+                            <li><strong>Questão Militar:</strong> O exército voltou da Guerra do Paraguai grandão e com moral, mas sem espaço político. Queriam mandar na parada.</li>
                         </ul>
+                        <div class="info-box success mt-2">
+                            <strong>Pra não esquecer:</strong> Dom Pedro II perdeu seus três maiores parceiros (Igreja, Exército e Fazendeiros). Ficou isolado e sem ninguém pra defender a coroa.
+                        </div>
                     </div>
                 </div>
 
                 <div class="topic-card highlight-card">
                     <div class="topic-header">
                         <div class="topic-icon">⚔️</div>
-                        <h2>A Proclamação</h2>
+                        <h2>A Queda do Império (O Golpe)</h2>
                     </div>
                     <div class="topic-body">
+                        <p>Como a Monarquia realmente acabou na prática:</p>
                         <ul class="feature-list">
-                            <li><strong>15 de novembro de 1889</strong>.</li>
-                            <li>Líder: <strong>Marechal Deodoro</strong>.</li>
-                            <li><span class="alert-text">Golpe militar</span> sem apoio popular.</li>
+                            <li><strong>Data:</strong> 15 de novembro de 1889.</li>
+                            <li><strong>Protagonista:</strong> Marechal Deodoro da Fonseca liderou as tropas.</li>
+                            <li><span class="alert-text">Alerta de Cilada 🚩:</span> Foi um <strong>GOLPE MILITAR</strong>. O povão ficou só assistindo de longe, achando que era um desfile militar. Não teve luta, não teve voto, o povo foi literalmente ignorado.</li>
                         </ul>
+                        <div class="info-box danger mt-2">
+                            <strong>Resumindo o babado:</strong> Zero participação popular! Foi o Exército tomando o poder na marra.
+                        </div>
                     </div>
                 </div>
 
                 <div class="topic-card">
                     <div class="topic-header">
                         <div class="topic-icon">🪖</div>
-                        <h2>República da Espada (1889–1894)</h2>
+                        <h2>A República da Espada (1889-1894)</h2>
                     </div>
                     <div class="topic-body">
-                        <div class="sub-topic">
-                            <h3>Deodoro da Fonseca</h3>
-                            <ul class="tag-list">
-                                <li class="tag">Estado Laico</li>
-                                <li class="tag">Registro Civil</li>
-                                <li class="tag">Bandeira Atual</li>
-                            </ul>
-                            <div class="info-box warning mt-2">
-                                <strong>💰 Encilhamento:</strong> Reforma de Rui Barbosa gerou hiperinflação e crise.
-                            </div>
-                        </div>
-                        <div class="sub-topic mt-4">
-                            <h3>Constituição de 1891</h3>
-                            <ul class="tag-list">
-                                <li class="tag">Presidencialismo</li>
-                                <li class="tag">3 Poderes</li>
-                            </ul>
-                            <div class="info-box danger mt-2">
-                                <strong>⚠️ Voto Aberto:</strong> Só homens alfabetizados. Excluía mulheres.
-                            </div>
+                        <p>Os primeiros cinco anos de República. O nome "Espada" é porque quem governou foram os militares (Marechal Deodoro e Marechal Floriano Peixoto).</p>
+                        <p>A regra deles era simples: governo forte, na base da autoridade.</p>
+                        <ul class="tag-list">
+                            <li class="tag">Igreja separada do Estado ❌⛪</li>
+                            <li class="tag">Criaram o Registro Civil 📜</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">💸</div>
+                        <h2>O Desastre do Encilhamento</h2>
+                    </div>
+                    <div class="topic-body">
+                        <p>Ainda na República da Espada, o ministro Rui Barbosa tentou industrializar o Brasil na pressa. O que ele fez?</p>
+                        <ul class="feature-list">
+                            <li>Liberou a impressão de dinheiro à vontade.</li>
+                            <li>Facilitou empréstimos nos bancos pra quem quisesse abrir empresa.</li>
+                        </ul>
+                        <p><strong>Deu ruim total!</strong> A galera pegava o dinheiro no banco e não abria empresa nenhuma ("empresas fantasmas"). Gerou uma crise enorme de especulação e a inflação foi parar nas nuvens.</p>
+                        <div class="info-box warning mt-2">
+                            <strong>Grave isso:</strong> Encilhamento = A primeira grande crise econômica da República (muito dinheiro solto = hiperinflação).
                         </div>
                     </div>
                 </div>
 
                 <div class="topic-card">
                     <div class="topic-header">
-                        <div class="topic-icon">🧑‍🌾</div>
-                        <h2>República Oligárquica (1894–1930)</h2>
+                        <div class="topic-icon">📜</div>
+                        <h2>A Constituição de 1891</h2>
                     </div>
                     <div class="topic-body">
-                        <div class="grid-2-cols">
-                            <div class="feature-item">
-                                <h4>🤠 Coronelismo</h4>
-                                <p>Poder dos grandes fazendeiros.</p>
-                            </div>
-                            <div class="feature-item">
-                                <h4>🐴 Voto de Cabresto</h4>
-                                <p>Voto forçado por ameaça/favor.</p>
-                            </div>
-                            <div class="feature-item">
-                                <h4>🤝 Política dos Gov.</h4>
-                                <p>Aliança Presidente + Estados.</p>
-                            </div>
+                        <p>A primeira Constituição republicana definiu as regras do novo Brasil:</p>
+                        <ul class="feature-list">
+                            <li>O Brasil virou um país Presidencialista.</li>
+                            <li>Dividido em 3 Poderes (Executivo, Legislativo, Judiciário).</li>
+                            <li>O Voto passou a ser <strong>ABERTO</strong> (não tinha cabine secreta, todo mundo via quem você escolhia).</li>
+                        </ul>
+                        <div class="info-box danger mt-2">
+                            <strong>⚠️ Vergonha Alheia:</strong> Apenas homens maiores de 21 anos e ALFABETIZADOS podiam votar. Mulheres, pobres, mendigos e soldados foram totalmente barrados do rolê eleitoral.
                         </div>
                     </div>
                 </div>
+
+                <div class="topic-card highlight-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">👑</div>
+                        <h2>República Oligárquica (1894–1930)</h2>
+                    </div>
+                    <div class="topic-body">
+                        <p>Sai o Exército, entram os Civis Ricaços. Essa foi a fase mais longa da Primeira República, dominada pela "Oligarquia" (que significa "governo de poucos").</p>
+                        <p>Quem mandava no Brasil? Os grandes fazendeiros e barões do café, principalmente de São Paulo e Minas Gerais (a famosa política do "Café com Leite").</p>
+                        <div class="info-box success mt-2">
+                            <strong>Em outras palavras:</strong> O Brasil virou uma grande fazenda onde os milionários do café ditavam todas as leis pra beneficiar eles mesmos.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">🤠</div>
+                        <h2>O Coronelismo</h2>
+                    </div>
+                    <div class="topic-body">
+                        <p>Nas cidades do interior, quem mandava em tudo era o <strong>Coronel</strong> (um fazendeiro muito rico e poderoso da região).</p>
+                        <p>Ele controlava a polícia local, o juiz, o padre e, claro, os eleitores. O coronel era o verdadeiro "dono da cidade" e não aceitava perder eleição nunca.</p>
+                    </div>
+                </div>
+
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">🐴</div>
+                        <h2>O Voto de Cabresto</h2>
+                    </div>
+                    <div class="topic-body">
+                        <p>Como o voto era ABERTO (lembra da Constituição de 1891?), os eleitores não tinham privacidade.</p>
+                        <p>O "Voto de Cabresto" era o jeito que os Coronéis usavam pra forçar o povo a votar nos candidatos deles. Acontecia de duas formas:</p>
+                        <ul class="feature-list">
+                            <li><strong>Ameaça:</strong> "Vota no meu candidato ou perde o emprego (ou apanha)".</li>
+                            <li><strong>Favor:</strong> "Vota no meu candidato que eu te dou uma bota, um remédio ou um saco de farinha".</li>
+                        </ul>
+                        <div class="info-box warning mt-2">
+                            <strong>Foco nisso:</strong> Voto de cabresto é voto manipulado, guiado à força e sem liberdade, assim como um cavalo sendo puxado por um cabresto.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">🤝</div>
+                        <h2>A Política dos Governadores</h2>
+                    </div>
+                    <div class="topic-body">
+                        <p>Foi o acordo supremo de "toma lá, dá cá" criado pelo presidente Campos Sales pra evitar que a oposição crescesse.</p>
+                        <p>Como funcionava o esquema:</p>
+                        <ol>
+                            <li style="margin-bottom: 0.5rem">O <strong>Coronel</strong> forçava o povo a votar no <strong>Governador</strong> do Estado.</li>
+                            <li style="margin-bottom: 0.5rem">O <strong>Governador</strong> garantia que todos os votos do estado fossem pro <strong>Presidente</strong> da República.</li>
+                            <li style="margin-bottom: 0.5rem">O <strong>Presidente</strong>, em troca, mandava dinheiro de volta pros Estados e deixava os Coronéis fazerem o que quisessem lá no interior, sem investigar nada.</li>
+                        </ol>
+                        <div class="info-box success mt-2">
+                            <strong>Pra fechar com chave de ouro:</strong> Era um ciclo perfeito de proteção. Todo mundo da panelinha se ajudava a fraudar a eleição e continuar no poder eternamente, sem concorrência.
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Spacing for bottom nav -->
                 <div style="height: 80px;"></div>
             </section>
@@ -113,6 +184,11 @@
             <!-- SEÇÃO FLASHCARDS -->
             <section id="flashcards-game" class="tab-content" style="display: none;">
                 <div class="flashcard-wrapper game-view">
+                    
+                    <div class="level-indicator">
+                        <span id="flash-level-text" class="level-badge">🔥 FASE 1</span>
+                    </div>
+
                     <div class="progress-bar-top">
                         <div class="progress-fill" id="progress"></div>
                     </div>
@@ -125,26 +201,31 @@
                                     <div class="question-content">
                                         <h3 id="card-question">Pergunta</h3>
                                     </div>
-                                    <p class="flip-hint pulse">Toque para ver a resposta</p>
+                                    <p class="flip-hint pulse">Toca aqui pra ver a resposta 👀</p>
                                 </div>
                                 <div class="flashcard-back">
                                     <div class="answer-content">
-                                        <h3 style="color: #93c5fd; margin-bottom: 0.5rem;">Resposta:</h3>
+                                        <h3 style="color: #93c5fd; margin-bottom: 0.5rem;" id="card-answer-title">Será que é isso mesmo? 🤔</h3>
                                         <p id="card-answer">Resposta</p>
                                     </div>
-                                    <div class="evaluation-buttons">
+                                    <div class="evaluation-buttons" id="eval-btns">
                                         <button class="eval-btn error" id="btn-wrong">
-                                            <span class="icon">❌</span> Errei
+                                            <span class="icon">❌</span> Errado
                                         </button>
                                         <button class="eval-btn success" id="btn-correct">
-                                            <span class="icon">✅</span> Acertei
+                                            <span class="icon">✅</span> Certo
+                                        </button>
+                                    </div>
+                                    <div class="continue-area" id="continue-area" style="display: none; margin-top: 1.5rem; text-align: center;">
+                                        <button class="action-btn primary-btn" id="btn-continue" style="opacity: 0.5; pointer-events: none; margin-bottom: 0;">
+                                            Aguarde... ⏱️
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="swipe-hints">
-                            <span>Deslize para navegar (quando virado)</span>
+                            <span>Desliza pra esquerda (Errado) ou Direita (Certo) ↔️</span>
                         </div>
                     </div>
                 </div>
@@ -153,12 +234,16 @@
             <!-- SEÇÃO LIGAR OS PONTOS -->
             <section id="match-game" class="tab-content" style="display: none;">
                 <div class="game-view">
+                    <div class="level-indicator mt-2">
+                        <span id="match-level-text" class="level-badge">🔥 FASE 1</span>
+                    </div>
+
                     <div class="progress-bar-top mt-2">
                         <div class="progress-fill" id="match-progress"></div>
                     </div>
                     <div class="match-header">
-                        <h3>Ligue os correspondentes</h3>
-                        <p>Toque na pergunta e depois na resposta certa.</p>
+                        <h3>Mete o Par Perfeito 🔗</h3>
+                        <p>Toca na pergunta e depois na resposta certa pra conectar!</p>
                     </div>
                     <div class="match-board" id="match-board">
                         <div class="match-col" id="match-col-q">
@@ -168,49 +253,56 @@
                             <!-- Items inserted by JS -->
                         </div>
                     </div>
-                    <button id="btn-next-match" class="action-btn primary-btn mt-4" style="display:none;">Próxima Rodada →</button>
+                    <button id="btn-next-match" class="action-btn primary-btn mt-4" style="display:none;">Próxima Rodada 🚀</button>
                 </div>
             </section>
 
             <!-- TELA DE RESULTADOS -->
             <section id="results" class="tab-content" style="display: none;">
                 <div class="results-container">
-                    <h2>Treino Concluído! 🎉</h2>
+                    <h2 id="result-title">Zerou a Fase! 🎉</h2>
                     <div class="score-circle">
                         <span id="score-text">0/10</span>
                     </div>
-                    <p class="score-message" id="score-message">Muito bem!</p>
+                    <p class="score-message" id="score-message">Serviu muito!</p>
                     
                     <div class="stats-row" id="stats-row">
                         <div class="stat-box success-box">
                             <span class="stat-val" id="stat-correct">0</span>
-                            <span class="stat-label">Acertos</span>
+                            <span class="stat-label">Cravou ✅</span>
                         </div>
                         <div class="stat-box error-box" id="error-box">
                             <span class="stat-val" id="stat-wrong">0</span>
-                            <span class="stat-label">Erros</span>
+                            <span class="stat-label">Rodou ❌</span>
                         </div>
                     </div>
 
-                    <button class="action-btn primary-btn mt-4" id="btn-restart">Treinar Novamente</button>
-                    <button class="action-btn secondary-btn" id="btn-back-study">Voltar ao Resumo</button>
+                    <div id="next-level-area" class="mt-4" style="display: none;">
+                        <p style="margin-bottom: 1rem; color: #f59e0b; font-weight: 600;">Tá se achando o sabichão? Bora ver se você banca a FASE 2 com palavras difíceis! 😈</p>
+                        <button class="action-btn next-level-btn" id="btn-next-level">Ir para a FASE 2 🌶️</button>
+                    </div>
+
+                    <div id="restart-area" class="mt-4">
+                        <button class="action-btn primary-btn" id="btn-restart">Jogar de novo 🔄</button>
+                        <button class="action-btn secondary-btn" id="btn-back-study">Voltar pra Fofoca 📖</button>
+                    </div>
                 </div>
             </section>
         </main>
 
-        <!-- Bottom Navigation (Mobile First) -->
+        <!-- Bottom Navigation -->
         <nav class="bottom-nav">
             <button class="nav-item active" data-target="conteudo">
                 <span class="nav-icon">📖</span>
-                <span>Resumo</span>
+                <span>A Fofoca</span>
             </button>
             <button class="nav-item" data-target="flashcards-game">
                 <span class="nav-icon">🗂️</span>
-                <span>Flashcards</span>
+                <span>Macetar</span>
             </button>
             <button class="nav-item" data-target="match-game">
                 <span class="nav-icon">🔗</span>
-                <span>Associação</span>
+                <span>Conectar</span>
             </button>
         </nav>
     </div>
