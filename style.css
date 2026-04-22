@@ -52,11 +52,13 @@ body {
 }
 
 .app-container {
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 /* Header */
@@ -111,6 +113,15 @@ body {
     align-items: center;
     gap: 0.8rem;
     margin-bottom: 0.8rem;
+}
+
+.topic-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.8rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2);
+    border: 2px solid var(--surface-active);
 }
 
 .topic-icon {
@@ -490,8 +501,10 @@ body {
 .bottom-nav {
     position: fixed;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
+    max-width: 600px;
     background: var(--surface);
     display: flex;
     padding: 0.8rem 1rem 1.5rem; /* extra padding for iOS safe area */

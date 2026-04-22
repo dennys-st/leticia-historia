@@ -1,11 +1,20 @@
-const CACHE_NAME = 'historia-app-v4';
+const CACHE_NAME = 'historia-app-v5';
 const urlsToCache = [
   './',
   './index.html',
   './style.css',
   './script.js',
   './manifest.json',
-  'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap'
+  'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap',
+  './assets/images/context_1889.png',
+  './assets/images/queda_imperio.png',
+  './assets/images/republica_espada.png',
+  './assets/images/encilhamento.png',
+  './assets/images/constituicao_1891.png',
+  './assets/images/republica_oligarquica.png',
+  './assets/images/coronelismo.png',
+  './assets/images/voto_cabresto.png',
+  './assets/images/politica_governadores.png'
 ];
 
 self.addEventListener('install', event => {
