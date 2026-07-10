@@ -765,9 +765,12 @@ themeOptions.forEach(opt => {
         const contentRepublica = document.getElementById('content-republica');
         const contentLivroQuarto = document.getElementById('content-livro-quarto');
 
+        const badgeSpan = themeBadgeBtn ? themeBadgeBtn.querySelector('span:first-child') : null;
+
         if (currentTheme === 'republica') {
             // Update Title
             if (pageTitle) pageTitle.innerHTML = 'A Proclamação da República 👑';
+            if (badgeSpan) badgeSpan.innerHTML = 'A História do Brasil 🇧🇷';
             
             // Show/Hide Resumo Content
             if (contentRepublica) {
@@ -786,6 +789,7 @@ themeOptions.forEach(opt => {
         } else {
             // Update Title
             if (pageTitle) pageTitle.innerHTML = 'Quarto de Despejo 📖';
+            if (badgeSpan) badgeSpan.innerHTML = 'Quarto de Despejo 📖';
             
             // Show/Hide Resumo Content
             if (contentRepublica) {
@@ -1033,9 +1037,11 @@ const initThemeDisplay = () => {
     const contentRepublica = document.getElementById('content-republica');
     const contentLivroQuarto = document.getElementById('content-livro-quarto');
     const themeOptions = document.querySelectorAll('.theme-option');
+    const badgeSpan = themeBadgeBtn ? themeBadgeBtn.querySelector('span:first-child') : null;
 
     if (currentTheme === 'republica') {
         if (pageTitle) pageTitle.innerHTML = 'A Proclamação da República 👑';
+        if (badgeSpan) badgeSpan.innerHTML = 'A História do Brasil 🇧🇷';
         if (contentRepublica) {
             contentRepublica.classList.add('active');
             contentRepublica.style.display = 'block';
@@ -1050,6 +1056,7 @@ const initThemeDisplay = () => {
         });
     } else {
         if (pageTitle) pageTitle.innerHTML = 'Quarto de Despejo 📖';
+        if (badgeSpan) badgeSpan.innerHTML = 'Quarto de Despejo 📖';
         if (contentRepublica) {
             contentRepublica.classList.remove('active');
             contentRepublica.style.display = 'none';
