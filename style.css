@@ -586,3 +586,117 @@ body {
     cursor: not-allowed;
     pointer-events: none;
 }
+
+/* Theme Selector Styles */
+.theme-selector-container {
+    position: relative;
+    display: inline-block;
+}
+
+.theme-badge-btn {
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    font-family: 'Outfit', sans-serif;
+}
+
+.theme-badge-btn:hover {
+    background: rgba(59, 130, 246, 0.35);
+    border-color: rgba(59, 130, 246, 0.6);
+    transform: translateY(-1px);
+}
+
+.theme-badge-btn:active {
+    transform: translateY(0);
+}
+
+.theme-badge-btn .dropdown-chevron {
+    font-size: 0.6rem;
+    transition: transform 0.2s ease;
+}
+
+.theme-selector-container.open .theme-badge-btn .dropdown-chevron {
+    transform: rotate(180deg);
+}
+
+.theme-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    background: rgba(30, 41, 59, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 0.4rem;
+    min-width: 250px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.theme-dropdown-menu.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.theme-option {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    width: 100%;
+    padding: 0.7rem 0.8rem;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: left;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.theme-option:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+}
+
+.theme-option.active {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+.theme-option .option-icon {
+    font-size: 1.1rem;
+}
+
+/* Transitions for dynamic page-content swap */
+.theme-content-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.theme-content-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -57,11 +57,105 @@ const level2Data = [
     { question: "Qual pacto institucional garantiu a estabilidade do poder entre a União e as oligarquias estaduais?", shortQ: "Pacto de estabilidade do poder", answer: "A Política dos Governadores, arquitetura que barrava a representação oposicionista no âmbito político.", fakeAnswer: "O dispositivo legal que proibia formalmente toda articulação partidária ou acordos inter-estaduais na câmara.", shortA: "A Política dos Governadores", image: "./assets/images/politica_governadores.png" }
 ];
 
+// ------------------------------------
+// DATABASE: LIVRO QUARTO - NÍVEL 1 (Quarto de Despejo)
+// ------------------------------------
+const livroQuartoLevel1Data = [
+    { question: "Quem é a autora de 'Quarto de Despejo' e qual era sua ocupação principal?", shortQ: "Autora e ocupação", answer: "Carolina Maria de Jesus, que trabalhava como catadora de papel.", fakeAnswer: "Clarice Lispector, que atuava como jornalista e escritora contratada.", shortA: "Carolina, catadora de papel", image: "" },
+    { question: "Onde se passa a maior parte dos relatos do diário de Carolina?", shortQ: "Local dos relatos", answer: "Na favela do Canindé, em São Paulo.", fakeAnswer: "Na favela da Rocinha, no Rio de Janeiro.", shortA: "Favela do Canindé, SP", image: "" },
+    { question: "Qual é a metáfora social central que dá título ao livro 'Quarto de Despejo'?", shortQ: "Metáfora do título", answer: "A favela como o quarto onde a cidade joga o que considera lixo ou inútil.", fakeAnswer: "O quarto da própria autora, onde ela guardava os livros que encontrava.", shortA: "Favela como quarto de descarte", image: "" },
+    { question: "Qual é o tema mais recorrente e doloroso descrito por Carolina no diário?", shortQ: "Tema mais recorrente", answer: "A fome diária enfrentada por ela e seus filhos.", fakeAnswer: "A falta de iluminação pública na avenida principal.", shortA: "A fome diária", image: "" },
+    { question: "Como Carolina representava poeticamente a fome quando se tornava insuportável?", shortQ: "Poética da fome", answer: "Através da cor amarela, dizendo que o mundo ficava amarelo.", fakeAnswer: "Através de uma sombra preta que cobria seus olhos.", shortA: "O mundo amarelo da fome", image: "" },
+    { question: "Quem foi o jornalista que descobriu os cadernos de Carolina e ajudou a publicá-los?", shortQ: "Jornalista descobridor", answer: "Audálio Dantas, que a conheceu em uma reportagem no Canindé.", fakeAnswer: "Rui Barbosa, que se encantou com a poesia dela nas ruas.", shortA: "Audálio Dantas", image: "" },
+    { question: "Em qual década se passam os diários publicados no livro?", shortQ: "Década dos relatos", answer: "Na década de 1950 (principalmente entre 1955 e 1958).", fakeAnswer: "Na década de 1980 (durante a redemocratização).", shortA: "Década de 1950", image: "" },
+    { question: "Como a linguagem de Carolina é retratada na edição final do livro?", shortQ: "Linguagem da obra", answer: "Foi preservada com marcas da oralidade e desvios da norma padrão.", fakeAnswer: "Foi totalmente reescrita em português formal erudito pela editora.", shortA: "Preservada com marcas populares", image: "" },
+    { question: "Qual era a relação de Carolina com a escrita e a leitura?", shortQ: "Relação com a escrita", answer: "A escrita era seu refúgio, desabafo e forma de resistir à miséria.", fakeAnswer: "Ela escrevia apenas sob encomenda para ganhar um salário mensal fixo.", shortA: "Refúgio e resistência", image: "" },
+    { question: "Qual data simbólica nacional Carolina analisa criticamente associando-a à fome?", shortQ: "Análise do 13 de Maio", answer: "O 13 de Maio (Abolição), dizendo que os negros continuam escravos da miséria.", fakeAnswer: "O 7 de Setembro (Independência), criticando os desfiles oficiais.", shortA: "Negros escravos da miséria", image: "" }
+];
+
+// ------------------------------------
+// DATABASE: LIVRO QUARTO - NÍVEL 2 (Aprofundado)
+// ------------------------------------
+const livroQuartoLevel2Data = [
+    { question: "Qual é a crítica de Carolina sobre a atuação dos políticos na favela?", shortQ: "Crítica aos políticos", answer: "Eles aparecem apenas em época de eleição fazendo promessas que nunca cumprem.", fakeAnswer: "Eles apoiam os moradores fornecendo moradia digna gratuita para todos.", shortA: "Aparecem só nas eleições", image: "" },
+    { question: "Qual o contraste entre o discurso desenvolvimentista de JK e a realidade do Canindé?", shortQ: "JK vs Canindé", answer: "Enquanto o país falava em progresso urbano e industrial, a favela crescia sem saneamento e com fome extrema.", fakeAnswer: "A favela do Canindé foi totalmente urbanizada e integrada à cidade moderna no governo JK.", shortA: "Progresso oficial vs miséria real", image: "" },
+    { question: "Como a maternidade solo impacta a rotina de Carolina descrita na obra?", shortQ: "Maternidade solo", answer: "Ela carrega sozinha a responsabilidade de alimentar, proteger e educar três filhos sem apoio financeiro.", fakeAnswer: "Ela recebia pensão do governo que cobria todas as despesas básicas da família.", shortA: "Responsabilidade total e solo", image: "" },
+    { question: "Por que Carolina rejeita o casamento no diário, comparando-se a outras mulheres da favela?", shortQ: "Rejeição ao casamento", answer: "Ela prefere a liberdade à submissão e violência que via nas relações das vizinhas.", fakeAnswer: "Ela acreditava que o casamento era proibido para catadores de papel.", shortA: "Prefere liberdade à submissão", image: "" },
+    { question: "Qual o papel do 'lixo' na dinâmica socioeconômica de 'Quarto de Despejo'?", shortQ: "Papel do lixo", answer: "É fonte de sobrevivência (venda de papel) e repositório de recursos (livros e comida).", fakeAnswer: "Representa um problema ambiental que ela tentava resolver limpando a favela de graça.", shortA: "Fonte de sobrevivência e recursos", image: "" },
+    { question: "Como o diário se constitui como 'literatura de testemunho'?", shortQ: "Literatura de testemunho", answer: "Por registrar de forma documental e íntima a realidade vivida pela própria narradora.", fakeAnswer: "Por narrar histórias de ficção baseadas em lendas urbanas paulistanas.", shortA: "Registro documental e íntimo", image: "" },
+    { question: "Quais são os nomes dos três filhos de Carolina retratados no livro?", shortQ: "Filhos de Carolina", answer: "João José, José Carlos e Vera Eunice.", fakeAnswer: "Pedro, Tiago e Maria do Carmo.", shortA: "João, José Carlos e Vera Eunice", image: "" },
+    { question: "Como Carolina enxerga a relação social com seus vizinhos da favela?", shortQ: "Relação com vizinhos", answer: "Conflituosa, marcada por fofocas e brigas, mas com eventuais gestos de solidariedade.", fakeAnswer: "Harmônica e pacífica, onde todos dividiam igualmente seus ganhos diariamente.", shortA: "Conflituosa com alguma solidariedade", image: "" },
+    { question: "Qual a importância do livro como denúncia da desigualdade de gênero e raça?", shortQ: "Gênero e raça", answer: "Explicita como a exclusão atinge de forma mais cruel a mulher negra e periférica.", fakeAnswer: "Defende que a divisão de classes não tem relação com cor ou gênero.", shortA: "Exclusão da mulher negra e pobre", image: "" },
+    { question: "O desfecho real de Carolina após a publicação do livro resolve a questão estrutural da favela?", shortQ: "Desfecho estrutural", answer: "Não, pois o sucesso individual da autora não alterou as condições das outras milhares de pessoas na miséria.", fakeAnswer: "Sim, o governo usou os lucros do livro para extinguir todas as favelas de São Paulo imediatamente.", shortA: "Sucesso individual não muda a estrutura", image: "" }
+];
+
+// ------------------------------------
+// DATABASE: LIVRO QUARTO - ENEM
+// ------------------------------------
+const livroQuartoEnemData = [
+    {
+        question: "(ENEM) Em 'Quarto de Despejo', Carolina Maria de Jesus utiliza a metáfora da casa para explicar a segregação socioespacial na cidade de São Paulo na década de 1950. Segundo essa perspectiva, a favela seria o 'quarto de despejo', enquanto a parte nobre da cidade seria a 'sala de visitas'.\n\nA partir dessa metáfora, depreende-se que a organização do espaço urbano:",
+        options: [
+            "Reflete a distribuição equitativa das riquezas geradas pelo processo de industrialização rápida.",
+            "Promove a integração harmônica entre as diferentes classes sociais através do convívio cotidiano.",
+            "Explicita a marginalização e o ocultamento das populações desfavorecidas pelo poder público e pela sociedade.",
+            "Garante a preservação histórica dos cortiços como patrimônio cultural imaterial do município.",
+            "Estimula o desenvolvimento sustentável das periferias por meio de políticas habitacionais eficazes."
+        ],
+        correct: 2
+    },
+    {
+        question: "(ENEM) \"13 DE MAIO. Hoje amanheceu chovendo. É um dia simpatico para mim. É o dia da Abolição. (...) E assim no dia 13 de maio de 1958 eu lutava contra a escravidão atual — a fome!\" (Carolina Maria de Jesus, Quarto de Despejo).\n\nNesse trecho, ao relacionar a data histórica da Abolição da Escravidão com a sua luta diária, a autora:",
+        options: [
+            "Comemora o fim definitivo do preconceito racial e a inserção plena dos negros no mercado de trabalho.",
+            "Problematiza a liberdade formal, evidenciando que a miséria e a falta de alimentos constituem novas formas de sujeição.",
+            "Critica a ineficiência do setor agrícola em fornecer alimentos de baixo custo para as áreas urbanas.",
+            "Agradece às autoridades do Império por terem garantido a subsistência básica dos libertos.",
+            "Elogia o papel da imprensa oficial em divulgar as datas comemorativas do calendário nacional."
+        ],
+        correct: 1
+    },
+    {
+        question: "(ENEM) A linguagem de Carolina Maria de Jesus em 'Quarto de Despejo' caracteriza-se pelo uso de marcas de oralidade, desvios da norma padrão da língua portuguesa e, ao mesmo tempo, por uma expressiva força poética e capacidade reflexiva.\n\nA decisão editorial de manter o texto original com essas marcas linguísticas justifica-se pelo fato de que:",
+        options: [
+            "Demonstra a incapacidade intelectual da autora em produzir uma narrativa coerente e estruturada.",
+            "Inviabiliza a compreensão do enredo por leitores que não dominam o dialeto falado em São Paulo.",
+            "Evidencia a artificialidade da escrita acadêmica em comparação com a riqueza da literatura oral popular.",
+            "Preserva a autenticidade do testemunho social e a identidade histórica da voz da narradora.",
+            "Atende a exigências acadêmicas de catalogação de variantes linguísticas extintas."
+        ],
+        correct: 3
+    },
+    {
+        question: "(ENEM) \"O livro vendeu mais de 100 mil exemplares nos primeiros meses e foi traduzido para diversos idiomas. No entanto, Carolina Maria de Jesus continuou enfrentando dificuldades financeiras e sociais ao longo de sua trajetória após o sucesso inicial.\"\n\nEsse descompasso entre o sucesso editorial de 'Quarto de Despejo' e a trajetória subsequente da autora revela que:",
+        options: [
+            "O mercado editorial brasileiro da época boicotou ativamente as vendas da obra para proteger elites políticas.",
+            "A superação individual da pobreza por meio do talento artístico é garantida e suficiente para mudar a estrutura social.",
+            "O consumo cultural da miséria pela classe média não se traduz necessariamente em transformações estruturais de inclusão.",
+            "Carolina Maria de Jesus abandonou a literatura voluntariamente para retornar ao trabalho na favela do Canindé.",
+            "A recepção crítica do livro considerou a obra fictícia e sem relevância sociológica para o país."
+        ],
+        correct: 2
+    },
+    {
+        question: "(ENEM) \"A fome é amarela. Quando eu tenho fome, tudo me parece amarelo. O amarelo é a cor do desespero, do sofrimento.\" (Carolina Maria de Jesus).\n\nAo atribuir uma cor à fome, a autora constrói uma linguagem poética que cumpre a função de:",
+        options: [
+            "Atenuar o impacto da miséria por meio de uma descrição estética e abstrata.",
+            "Sinalizar a necessidade de reformas estéticas nas residências periféricas da cidade.",
+            "Classificar os graus de desnutrição das crianças conforme a tabela de saúde municipal.",
+            "Traduzir a experiência subjetiva e visceral da privação física em um símbolo de dor coletiva.",
+            "Propor uma teoria das cores baseada nas sensações biológicas do corpo humano."
+        ],
+        correct: 3
+    }
+];
 
 // GLOBALS
 let currentGameMode = null; // 'flashcards' | 'match'
 let currentLevel = 1;
-let currentData = [...level1Data];
+const isQuartoPage = document.body.getAttribute('data-tema') === 'quarto';
+let currentTheme = isQuartoPage ? 'livro-quarto' : 'republica';
+let currentData = isQuartoPage ? [...livroQuartoLevel1Data] : [...level1Data];
 let currentCardIsTrue = true; // Tracks if the currently shown answer is the real one
 
 const screenFlash = document.getElementById('screen-flash');
@@ -127,7 +221,7 @@ navItems.forEach(item => {
 
         // Reset level to 1 when re-entering games from menu
         currentLevel = 1;
-        currentData = [...level1Data];
+        currentData = currentTheme === 'republica' ? [...level1Data] : [...livroQuartoLevel1Data];
 
         if (targetId === 'flashcards-game') {
             currentGameMode = 'flashcards';
@@ -446,7 +540,7 @@ function showResults(correct, total, showErrors) {
 
 document.getElementById('btn-next-level').addEventListener('click', () => {
     currentLevel = 2;
-    currentData = [...level2Data];
+    currentData = currentTheme === 'republica' ? [...level2Data] : [...livroQuartoLevel2Data];
     document.getElementById('results').style.display = 'none';
     
     if(currentGameMode === 'flashcards') {
@@ -481,7 +575,7 @@ document.getElementById('btn-back-study').addEventListener('click', () => {
 });
 
 // ----- ENEM GAME LOGIC -----
-const enemData = [
+const republicaEnemData = [
     {
         question: "No Brasil da Primeira República, a estrutura política baseava-se na articulação entre o governo federal e as oligarquias estaduais. Essa articulação, conhecida como Política dos Governadores, dependia do controle do eleitorado, que era garantido por meio:",
         options: [
@@ -539,6 +633,8 @@ const enemData = [
     }
 ];
 
+let currentEnemData = isQuartoPage ? [...livroQuartoEnemData] : [...republicaEnemData];
+
 let enemIndex = 0;
 let enemCorrect = 0;
 let enemWrong = 0;
@@ -551,14 +647,14 @@ function initEnemGame() {
 }
 
 function loadEnemQuestion() {
-    if(enemIndex >= enemData.length) {
-        showResults(enemCorrect, enemData.length, true);
+    if(enemIndex >= currentEnemData.length) {
+        showResults(enemCorrect, currentEnemData.length, true);
         return;
     }
 
-    const data = enemData[enemIndex];
-    document.getElementById('enem-counter').textContent = `${enemIndex + 1}/${enemData.length}`;
-    document.getElementById('enem-progress').style.width = `${(enemIndex / enemData.length) * 100}%`;
+    const data = currentEnemData[enemIndex];
+    document.getElementById('enem-counter').textContent = `${enemIndex + 1}/${currentEnemData.length}`;
+    document.getElementById('enem-progress').style.width = `${(enemIndex / currentEnemData.length) * 100}%`;
     document.getElementById('enem-question').textContent = data.question;
     
     const optionsContainer = document.getElementById('enem-options');
@@ -577,7 +673,7 @@ function loadEnemQuestion() {
 }
 
 function checkEnemAnswer(selectedIndex, btnElement) {
-    const data = enemData[enemIndex];
+    const data = currentEnemData[enemIndex];
     const optionsContainer = document.getElementById('enem-options');
     const buttons = optionsContainer.querySelectorAll('.enem-option');
     
@@ -610,3 +706,325 @@ document.getElementById('btn-enem-continue').addEventListener('click', () => {
     enemIndex++;
     loadEnemQuestion();
 });
+
+// ----- THEME SELECTOR & DYNAMIC PAGE SWITCHING -----
+const themeSelectorContainer = document.getElementById('theme-selector');
+const themeBadgeBtn = document.getElementById('theme-badge-btn');
+const themeDropdown = document.getElementById('theme-dropdown');
+
+if (themeBadgeBtn && themeDropdown) {
+    themeBadgeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        themeDropdown.classList.toggle('show');
+        themeSelectorContainer.classList.toggle('open');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', () => {
+        themeDropdown.classList.remove('show');
+        themeSelectorContainer.classList.remove('open');
+    });
+}
+
+// Utility to shuffle child nodes of a container
+function shuffleChildren(container) {
+    if (!container || !container.children.length) return;
+    const children = Array.from(container.children);
+    // Fisher-Yates shuffle
+    for (let i = children.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        container.appendChild(children[j]);
+    }
+}
+
+// Theme switcher
+const themeOptions = document.querySelectorAll('.theme-option');
+themeOptions.forEach(opt => {
+    opt.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const selectedTheme = opt.getAttribute('data-theme');
+        if (selectedTheme === currentTheme) {
+            themeDropdown.classList.remove('show');
+            themeSelectorContainer.classList.remove('open');
+            return;
+        }
+
+        // Switch active class on options
+        themeOptions.forEach(o => o.classList.remove('active'));
+        opt.classList.add('active');
+
+        // Set current theme
+        currentTheme = selectedTheme;
+
+        // Reset levels and updates data
+        currentLevel = 1;
+
+        const pageTitle = document.getElementById('page-title');
+        const contentRepublica = document.getElementById('content-republica');
+        const contentLivroQuarto = document.getElementById('content-livro-quarto');
+
+        if (currentTheme === 'republica') {
+            // Update Title
+            if (pageTitle) pageTitle.innerHTML = 'A Proclamação da República 👑';
+            
+            // Show/Hide Resumo Content
+            if (contentRepublica) {
+                contentRepublica.classList.add('active');
+                contentRepublica.style.display = 'block';
+            }
+            if (contentLivroQuarto) {
+                contentLivroQuarto.classList.remove('active');
+                contentLivroQuarto.style.display = 'none';
+            }
+
+            // Swap datasets
+            currentData = [...level1Data];
+            currentEnemData = [...republicaEnemData];
+            shuffleChildren(contentRepublica);
+        } else {
+            // Update Title
+            if (pageTitle) pageTitle.innerHTML = 'Quarto de Despejo 📖';
+            
+            // Show/Hide Resumo Content
+            if (contentRepublica) {
+                contentRepublica.classList.remove('active');
+                contentRepublica.style.display = 'none';
+            }
+            if (contentLivroQuarto) {
+                contentLivroQuarto.classList.add('active');
+                contentLivroQuarto.style.display = 'block';
+            }
+
+            // Swap datasets
+            currentData = [...livroQuartoLevel1Data];
+            currentEnemData = [...livroQuartoEnemData];
+            shuffleChildren(contentLivroQuarto);
+        }
+
+        // Close dropdown
+        themeDropdown.classList.remove('show');
+        themeSelectorContainer.classList.remove('open');
+
+        // Force navigate to Resumo tab
+        navItems.forEach(n => n.classList.remove('active'));
+        tabContents.forEach(c => {
+            c.classList.remove('active');
+            c.style.display = 'none';
+        });
+        
+        // Activate Resumo tab
+        const resumoTab = document.querySelector('.nav-item[data-target="conteudo"]');
+        const resumoContent = document.getElementById('conteudo');
+        if (resumoTab && resumoContent) {
+            resumoTab.classList.add('active');
+            resumoContent.classList.add('active');
+            resumoContent.style.display = 'block';
+        }
+
+        // Re-apply theme content visibility (tab reset may have cleared inline styles)
+        if (currentTheme === 'republica') {
+            if (contentRepublica) contentRepublica.style.display = 'block';
+            if (contentLivroQuarto) contentLivroQuarto.style.display = 'none';
+        } else {
+            if (contentRepublica) contentRepublica.style.display = 'none';
+            if (contentLivroQuarto) contentLivroQuarto.style.display = 'block';
+        }
+    });
+});
+
+// ----- DYNAMIC MARKDOWN PARSING & RENDERING -----
+function cleanMarkdownReferences(text) {
+    return text
+        .replace(/:contentReference\[.*?\]/g, '')
+        .replace(/\[oaicite:\d+\]/g, '')
+        .replace(/\{index=\d+\}/g, '')
+        .trim();
+}
+
+function parseMarkdownToHTML(markdownText) {
+    markdownText = cleanMarkdownReferences(markdownText);
+    const lines = markdownText.split('\n');
+    let html = '';
+    let currentCard = null;
+    let cardBodyLines = [];
+
+    const emojiMap = {
+        "Ficha da Obra": "📕",
+        "Autora": "✍️",
+        "Contexto Histórico": "⏳",
+        "Canindé": "🏘️",
+        "Título": "🏚️",
+        "Gênero Diário": "📅",
+        "Narradora": "🗣️",
+        "Linguagem": "💬",
+        "Enredo Geral": "📖",
+        "Fome": "💛",
+        "Pobreza": "💸",
+        "Trabalho": "🔨",
+        "Maternidade": "🤰",
+        "Os Filhos": "👦",
+        "Vizinhos": "👥",
+        "Violência": "💥",
+        "Alcoolismo": "🍷",
+        "Política": "🗳️",
+        "Cidade": "🏙️",
+        "Lixo": "🗑️",
+        "Água": "💧",
+        "Comida": "🍲",
+        "Preconceito": "🚫",
+        "Mulher": "👩",
+        "Escrita": "📝",
+        "Leitura": "📚",
+        "Religião": "🙏",
+        "Infância": "🧸",
+        "1955": "📅",
+        "1958": "📅",
+        "13 de Maio": "⛓️",
+        "Personagens": "🎭",
+        "Audálio Dantas": "📰",
+        "Crítica Social": "📢",
+        "Racismo": "✊🏾",
+        "Classe Social": "📊",
+        "Dignidade": "⭐",
+        "Sonhos": "💭",
+        "Simbolismos": "🔍",
+        "Clímax Social": "⚡",
+        "Desfecho": "🏁",
+        "Atualidade": "📈",
+        "Estilo Literário": "✒️",
+        "Realismo": "👁️",
+        "Questões de Prova": "🎯",
+        "Perguntas Frequentes": "❓",
+        "Resumo Final": "🏆"
+    };
+
+    function getEmoji(title) {
+        const cleaned = title.trim();
+        if (emojiMap[cleaned]) return emojiMap[cleaned];
+        for (const [key, val] of Object.entries(emojiMap)) {
+            if (cleaned.toLowerCase().includes(key.toLowerCase())) return val;
+        }
+        return "📖";
+    }
+
+    function processCardBody(bodyLines) {
+        if (bodyLines.length === 0) return '';
+        let bodyHtml = '';
+        let inList = false;
+        let listType = null; // 'ul', 'ol'
+
+        function closeList() {
+            if (inList) {
+                bodyHtml += `</${listType}>`;
+                inList = false;
+                listType = null;
+            }
+        }
+
+        for (let i = 0; i < bodyLines.length; i++) {
+            let line = bodyLines[i].trim();
+            if (!line) {
+                closeList();
+                continue;
+            }
+
+            if (line.startsWith('Imagem:') || line === 'Texto:') {
+                continue;
+            }
+
+            line = line
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/__(.*?)__/g, '<strong>$1</strong>')
+                .replace(/_(.*?)_/g, '<em>$1</em>');
+
+            const bulletMatch = line.match(/^[\-\*]\s+(.*)$/);
+            const numMatch = line.match(/^\d+\s*[\.\)]\s+(.*)$/);
+            const kvMatch = line.match(/^([A-Za-z0-9À-ÿ\s\-]+):\s+(.*)$/);
+
+            if (bulletMatch) {
+                if (!inList || listType !== 'ul') {
+                    closeList();
+                    bodyHtml += '<ul class="feature-list">';
+                    inList = true;
+                    listType = 'ul';
+                }
+                bodyHtml += `<li>${bulletMatch[1]}</li>`;
+            } else if (numMatch) {
+                if (!inList || listType !== 'ol') {
+                    closeList();
+                    bodyHtml += '<ol class="feature-list">';
+                    inList = true;
+                    listType = 'ol';
+                }
+                bodyHtml += `<li>${numMatch[1]}</li>`;
+            } else if (kvMatch && !line.includes('://')) {
+                if (!inList || listType !== 'ul') {
+                    closeList();
+                    bodyHtml += '<ul class="feature-list">';
+                    inList = true;
+                    listType = 'ul';
+                }
+                bodyHtml += `<li><strong>${kvMatch[1]}:</strong> ${kvMatch[2]}</li>`;
+            } else {
+                closeList();
+                bodyHtml += `<p>${line}</p>`;
+            }
+        }
+        closeList();
+        return bodyHtml;
+    }
+
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (line.startsWith('# ')) {
+            if (currentCard) {
+                html += `
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">${getEmoji(currentCard)}</div>
+                        <h2>${currentCard}</h2>
+                    </div>
+                    <div class="topic-body">
+                        ${processCardBody(cardBodyLines)}
+                    </div>
+                </div>`;
+            }
+            currentCard = line.substring(2).trim();
+            cardBodyLines = [];
+        } else if (currentCard) {
+            cardBodyLines.push(lines[i]);
+        }
+    }
+
+    if (currentCard) {
+        html += `
+        <div class="topic-card">
+            <div class="topic-header">
+                <div class="topic-icon">${getEmoji(currentCard)}</div>
+                <h2>${currentCard}</h2>
+            </div>
+            <div class="topic-body">
+                ${processCardBody(cardBodyLines)}
+            </div>
+        </div>`;
+    }
+
+    return html;
+}
+
+// Initial rendering of Quarto de Despejo content from Markdown
+const contentLivroQuartoElem = document.getElementById('content-livro-quarto');
+if (contentLivroQuartoElem && typeof livroQuartoMarkdown !== 'undefined') {
+    contentLivroQuartoElem.innerHTML = parseMarkdownToHTML(livroQuartoMarkdown);
+    shuffleChildren(contentLivroQuartoElem);
+}
+
+const contentRepublicaElem = document.getElementById('content-republica');
+if (contentRepublicaElem) {
+    shuffleChildren(contentRepublicaElem);
+}
+
+
+
+
