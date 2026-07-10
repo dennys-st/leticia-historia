@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#0f172a">
-    <title>Quarto de Despejo - Estudo Completo</title>
+    <title>Proclamação da República - Estudo Completo</title>
     <link rel="manifest" href="manifest.json">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=13">
     <!-- Confetti Library -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
-<body data-tema="quarto">
+<body data-tema="republica">
     <!-- Screen Flash Overlay for Feedback -->
     <div id="screen-flash" class="screen-flash"></div>
     <div class="app-container">
@@ -24,17 +24,17 @@
                         <span class="dropdown-chevron">▼</span>
                     </button>
                     <div class="theme-dropdown-menu" id="theme-dropdown">
-                        <button class="theme-option" data-theme="republica">
+                        <button class="theme-option active" data-theme="republica">
                             <span class="option-icon">👑</span>
                             <span class="option-text">Proclamação da República</span>
                         </button>
-                        <button class="theme-option active" data-theme="livro-quarto">
+                        <button class="theme-option" data-theme="livro-quarto">
                             <span class="option-icon">📖</span>
                             <span class="option-text">Quarto de Despejo</span>
                         </button>
                     </div>
                 </div>
-                <h1 id="page-title">Quarto de Despejo 📖</h1>
+                <h1 id="page-title">A Proclamação da República 👑</h1>
             </div>
         </header>
 
@@ -43,7 +43,7 @@
             <!-- SEÇÃO DE ESTUDO (RESUMO) -->
             <section id="conteudo" class="tab-content active">
                 <!-- Tema: Proclamação da República -->
-                <div id="content-republica" class="theme-content-section" style="display:none;">
+                <div id="content-republica" class="theme-content-section active">
                 <div class="topic-card">
                     <div class="topic-header">
                         <div class="topic-icon">👀</div>
@@ -205,7 +205,7 @@
                 </div> <!-- /content-republica -->
 
                 <!-- Tema: Quarto de Despejo -->
-                <div id="content-livro-quarto" class="theme-content-section active"></div>
+                <div id="content-livro-quarto" class="theme-content-section"></div>
 
                 <!-- Spacing for bottom nav -->
                 <div style="height: 80px;"></div>

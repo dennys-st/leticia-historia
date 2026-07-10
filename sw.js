@@ -1,10 +1,11 @@
-const CACHE_NAME = 'historia-app-v12';
+const CACHE_NAME = 'historia-app-v13';
 const urlsToCache = [
   './',
   './index.html',
-  './style.css?v=12',
-  './script.js?v=12',
-  './quarto_markdown.js?v=12',
+  './republica.html',
+  './style.css?v=13',
+  './script.js?v=13',
+  './quarto_markdown.js?v=13',
   './manifest.json',
   'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap',
   './assets/images/context_1889.png',

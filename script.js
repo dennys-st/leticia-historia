@@ -153,9 +153,11 @@ const livroQuartoEnemData = [
 // GLOBALS
 let currentGameMode = null; // 'flashcards' | 'match'
 let currentLevel = 1;
-const isQuartoPage = document.body.getAttribute('data-tema') === 'quarto';
-let currentTheme = isQuartoPage ? 'livro-quarto' : 'republica';
-let currentData = isQuartoPage ? [...livroQuartoLevel1Data] : [...level1Data];
+const isRepublicaPage = document.body.getAttribute('data-tema') === 'republica' || 
+                        window.location.hostname.includes('-republica') || 
+                        window.location.pathname.includes('/republica');
+let currentTheme = isRepublicaPage ? 'republica' : 'livro-quarto';
+let currentData = currentTheme === 'republica' ? [...level1Data] : [...livroQuartoLevel1Data];
 let currentCardIsTrue = true; // Tracks if the currently shown answer is the real one
 
 const screenFlash = document.getElementById('screen-flash');
@@ -633,7 +635,7 @@ const republicaEnemData = [
     }
 ];
 
-let currentEnemData = isQuartoPage ? [...livroQuartoEnemData] : [...republicaEnemData];
+let currentEnemData = currentTheme === 'republica' ? [...republicaEnemData] : [...livroQuartoEnemData];
 
 let enemIndex = 0;
 let enemCorrect = 0;
@@ -1024,6 +1026,45 @@ const contentRepublicaElem = document.getElementById('content-republica');
 if (contentRepublicaElem) {
     shuffleChildren(contentRepublicaElem);
 }
+
+// Setup initial active theme DOM classes based on currentTheme
+const initThemeDisplay = () => {
+    const pageTitle = document.getElementById('page-title');
+    const contentRepublica = document.getElementById('content-republica');
+    const contentLivroQuarto = document.getElementById('content-livro-quarto');
+    const themeOptions = document.querySelectorAll('.theme-option');
+
+    if (currentTheme === 'republica') {
+        if (pageTitle) pageTitle.innerHTML = 'A Proclamação da República 👑';
+        if (contentRepublica) {
+            contentRepublica.classList.add('active');
+            contentRepublica.style.display = 'block';
+        }
+        if (contentLivroQuarto) {
+            contentLivroQuarto.classList.remove('active');
+            contentLivroQuarto.style.display = 'none';
+        }
+        themeOptions.forEach(opt => {
+            if (opt.getAttribute('data-theme') === 'republica') opt.classList.add('active');
+            else opt.classList.remove('active');
+        });
+    } else {
+        if (pageTitle) pageTitle.innerHTML = 'Quarto de Despejo 📖';
+        if (contentRepublica) {
+            contentRepublica.classList.remove('active');
+            contentRepublica.style.display = 'none';
+        }
+        if (contentLivroQuarto) {
+            contentLivroQuarto.classList.add('active');
+            contentLivroQuarto.style.display = 'block';
+        }
+        themeOptions.forEach(opt => {
+            if (opt.getAttribute('data-theme') === 'livro-quarto') opt.classList.add('active');
+            else opt.classList.remove('active');
+        });
+    }
+};
+initThemeDisplay();
 
 
 
